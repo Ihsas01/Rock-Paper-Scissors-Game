@@ -3,35 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors</title>
+    <title>Rock Paper Scissors: Cosmic Clash</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Rock Paper Scissors</h1>
-        <div class="score-board">
-            <div class="score">
-                <p>Your Score: <span id="user-score">0</span></p>
+    <canvas id="particle-canvas"></canvas>
+    <div class="scroll-container">
+        <div class="container">
+            <h1>Rock Paper Scissors: Cosmic Clash</h1>
+            <div class="difficulty-selector">
+                <label for="difficulty">Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
             </div>
-            <div class="score">
-                <p>Computer Score: <span id="computer-score">0</span></p>
+            <div class="stats-board">
+                <div class="score-card">
+                    <p>Your Score: <span id="user-score">0</span></p>
+                    <p>Win Streak: <span id="user-streak">0</span></p>
+                </div>
+                <div class="score-card">
+                    <p>Computer Score: <span id="computer-score">0</span></p>
+                    <p>Moves: <span id="move-count">0</span></p>
+                </div>
             </div>
+            <div class="prompt">Choose Your Cosmic Weapon:</div>
+            <div class="buttons">
+                <button id="rock" title="Rock" aria-label="Rock">👊</button>
+                <button id="paper" title="Paper" aria-label="Paper">🖐</button>
+                <button id="scissors" title="Scissors" aria-label="Scissors">✌</button>
+            </div>
+            <div class="result-container">
+                <p id="result">Enter the Cosmic Arena!</p>
+            </div>
+            <div class="leaderboard">
+                <h2>Galactic Leaderboard</h2>
+                <ul id="leaderboard-list"></ul>
+            </div>
+            <div class="history">
+                <h2>Battle Log</h2>
+                <ul id="history-list"></ul>
+            </div>
+            <div class="instructions">
+                <h2>Game Instructions</h2>
+                <p>Welcome to the Cosmic Clash! Choose your weapon (Rock, Paper, or Scissors) to battle the computer. Select a difficulty level to challenge yourself. Track your score, win streak, and moves. Your victories are recorded in the Galactic Leaderboard. Click "Reset Universe" to start anew. May the cosmos favor you!</p>
+            </div>
+            <button class="reset-btn">Reset Universe</button>
         </div>
-        <p class="prompt">Choose your move:</p>
-        <div class="buttons">
-            <button id="rock" title="Rock">👊</button>
-            <button id="paper" title="Paper">🖐</button>
-            <button id="scissors" title="Scissors">✌</button>
-        </div>
-        <div class="result-container">
-            <p id="result">Let's Play!</p>
-        </div>
-        <div class="history">
-            <h2>Game History</h2>
-            <ul id="history-list"></ul>
-        </div>
-        <button id="reset" class="reset-btn">Reset Game</button>
     </div>
+    <audio id="click-sound" src="https://cdn.pixabay.com/audio/2022/03/10/audio_5b1b51a496.mp3"></audio>
+    <audio id="win-sound" src="https://cdn.pixabay.com/audio/2022/03/10/audio_2f3b7a6e7a.mp3"></audio>
+    <audio id="lose-sound" src="https://cdn.pixabay.com/audio/2022/03/10/audio_8f5a1b2c4e.mp3"></audio>
     <script src="index.js"></script>
 </body>
 </html>
